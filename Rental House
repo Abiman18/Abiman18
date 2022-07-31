@@ -1,7 +1,7 @@
-userlist = []
+list1 = []
 def userpage():
      print("user page accessed")
-     visitor = input("enter who are you   / tenant/  owner/ admin")
+     visitor = input("enter who are you tenant / owner / admin")
   
      if visitor == tenant:
         print("see the list of houses")
@@ -27,37 +27,37 @@ def userpage():
      else:
         opt = int(input("Enter '0' to log out"))
         if opt == 0:
-            onlinehouserentingportal()
+            houserentingportal()
 def login():
      username = input("Please enter username: ")
-     for user in userlist:
+     for user in list1:
           if username in user:
                password = input("Please enter password: ")
                if password in user:
                     userpage()
                else:
                     print("Incorrect password")
-                    onlinehouserentingportal()
+                    houserentingportal()
           else:
                print("Unregister username")
-               onlinehouserentingportal()
+               houserentingportal()
 
 def signup():
      username = input("Please enter username: ")
      password = input("Please enter password: ")
-     userlist.append([username,password])
-     print(userlist)
+     list1.append([username,password])
+     print(list1)
      userpage()
 
-def onlinehouserentingportal():
+def houserentingportal():
      opt = int(input("Enter '0' to sign up, '1' to login: "))
      if opt == 0:
           signup()
      elif opt == 1:
           login()
-onlinehouserentingportal()
+houserentingportal()
 
-a="tenant "
+a="tenant"
 b= "owner"
 c="admin"
 
